@@ -19,6 +19,6 @@ int main(int argc, char *argv[])
 			printf("%s  ", read->d_name);
 	}
 	closedir(dir);
-	return(0);
+	return (0);
 
 }
