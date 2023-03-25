@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
 {
     DIR *dir;
     struct dirent *read;
+
     if (argc < 2)
         argv[0] = "./";
     dir = opendir(argv[0]);
@@ -19,4 +20,5 @@ int main(int argc, char *argv[])
         }
     closedir(dir);
     return(0);
+
 }
