@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
 	DIR *dir;
 	struct dirent *read;
 	int i;
+	int x = argc - 1;
 
 	if (argc < 2)
 		argv[0] = "./";
@@ -32,6 +33,8 @@ int main(int argc, char *argv[])
 			fprintf(stderr, "./hls: cannot access '%s': ", argv[i]);
 			perror("");
 		}
+		if (i != x)
+			printf("\n");
 		
 	}
 	
