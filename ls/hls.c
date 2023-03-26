@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		{
 			if (errno == 13)
 			{
-				fprintf(stderr, "%s: cannot access %s : ", argv[0], argv[i]);
+				fprintf(stderr, "%s: cannot open directory %s: ", argv[0], argv[i]);
 				perror("");
 			}
 			printf("%s\n", argv[i]);
