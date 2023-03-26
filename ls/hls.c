@@ -20,8 +20,9 @@ int main(int argc, char *argv[])
 		dir = opendir(argv[i]);
 		if (dir)
 		{
-			printf("%s:\n", argv[i]);
-				while ((read = readdir(dir)) != NULL)
+			if (argc > 2)
+				printf("%s:\n", argv[i]);
+			while ((read = readdir(dir)) != NULL)
 			{
 				if (read->d_name[0] != '.')
 					printf("%s  ", read->d_name);
