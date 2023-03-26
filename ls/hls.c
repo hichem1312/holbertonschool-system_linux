@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
 					printf("%s  ", read->d_name);
 			}
 			printf("\n");
+			closedir(dir);
 		}
 		else
 		{
@@ -39,6 +40,5 @@ int main(int argc, char *argv[])
 		
 	}
 	
-	closedir(dir);
 	return (0);
 }
