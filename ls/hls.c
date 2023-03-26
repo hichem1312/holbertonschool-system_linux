@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 	struct dirent *read;
 	int i;
 	int x = argc - 1;
+	struct stat buf;
 
 	if (argc < 2)
 		argv[0] = "./";
@@ -29,6 +30,10 @@ int main(int argc, char *argv[])
 			}
 			printf("\n");
 			closedir(dir);
+		}
+		else if (lstat(argv[i], &buf) == 0)
+		{
+			printf("%s\n", argv[i]);
 		}
 		else
 		{
