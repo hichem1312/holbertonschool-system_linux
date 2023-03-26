@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			fprintf(stderr, "./hls: cannot access '%s': ", argv[i]);
+			fprintf(stderr, "./hls: cannot access %s: ", argv[i]);
 			perror("");
 		}
 		if (i != x)
