@@ -38,7 +38,8 @@ int main(int argc, char *argv[])
 				fprintf(stderr, "%s: cannot open directory %s: ", argv[0], argv[i]);
 				perror("");
 			}
-			printf("%s\n", argv[i]);
+			else
+				printf("%s\n", argv[i]);
 		}
 		else
 		{
