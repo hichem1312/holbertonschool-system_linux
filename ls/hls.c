@@ -33,6 +33,11 @@ int main(int argc, char *argv[])
 		}
 		else if (lstat(argv[i], &buf) == 0)
 		{
+			if (errno == 13)
+			{
+				fprintf(stderr, "%s: cannot access %s : ", argv[0], argv[i]);
+				perror("");
+			}
 			printf("%s\n", argv[i]);
 		}
 		else
