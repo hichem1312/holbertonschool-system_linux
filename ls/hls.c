@@ -17,19 +17,23 @@ int main(int argc, char *argv[])
 		argv[0] = "./";
 	for (i = 1; i < argc; i++)
 	{
-
-		dir = opendir(argv[i]);
-		if (dir)
+		if (argv[i][0] != '-')
+			dir = opendir(argv[i]);
+		if (dir && argv[i][0] != '-')
 		{
-			if (argc > 2)
+			if (argc > 2 && (argv[2][0] != '-'))
 				printf("%s:\n", argv[i]);
 			while ((read = readdir(dir)) != NULL)
 			{
-				if (read->d_name[0] != '.')
+				if ((read->d_name[0] != '.') && (argv[x][0] == '-' && argv[x][1] == '1'))
+					printf("%s\n", read->d_name);
+				else if (read->d_name[0] != '.')
 					printf("%s  ", read->d_name);
 			}
-			printf("\n");
-			closedir(dir);
+			if (argv[x][0] != '-' && i == x)
+				printf("\n");
+			if (argv[i][0] != '-')
+				closedir(dir);
 		}
 		else if (lstat(argv[i], &buf) == 0)
 		{
@@ -41,12 +45,12 @@ int main(int argc, char *argv[])
 			else
 				printf("%s\n", argv[i]);
 		}
-		else
+		else if (argv[i][0] != '-')
 		{
 			fprintf(stderr, "%s: cannot access %s: ", argv[0], argv[i]);
 			perror("");
 		}
-		if (i != x)
+		if (i != x && (argv[i + 1][0] != '-'))
 			printf("\n");
 		
 	}
