@@ -36,9 +36,9 @@ int main(int argc, char *argv[])
 					printf("%s:\n", argv[i]);
 				while ((read = readdir(dir)) != NULL)
 				{
-					if (((read->d_name[0] != '.' || (a > 0)) || ((A > 0) && (read->d_name[1] != 46 && strlen(read->d_name) > 1))) && (l > 0))
+					if (((read->d_name[0] != '.' || (a > 0)) || ((A > 0) && (read->d_name[2] > 46 && strlen(read->d_name) > 1))) && (l > 0))
 						printf("%s\n", read->d_name);
-					else if (((read->d_name[0] != '.' || (a > 0)) || ((A > 0) && (read->d_name[1] != 46 && strlen(read->d_name) > 1))) && (l == 0))
+					else if (((read->d_name[0] != '.' || (a > 0)) || ((A > 0) && (read->d_name[2] > 46 && strlen(read->d_name) > 1))) && (l == 0))
 						printf("%s  ", read->d_name);
 				}
 				if (l == 0)
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 				fprintf(stderr, "%s: cannot access %s: ", argv[0], argv[i]);
 				perror("");
 			}
-			if (i != n - 1 /*|| (n == 2) || (l == 0 && a == 0 && A == 0)*/)
+			if (i < n - 1 /*|| (n == 2) || (l == 0 && a == 0 && A == 0)*/)
 				printf("\n");
 		}
 	}
