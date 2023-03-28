@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 				fprintf(stderr, "%s: cannot access %s: ", argv[0], argv[i]);
 				perror("");
 			}
-			if (i < n - 1 /*|| (n == 2) || (l == 0 && a == 0 && A == 0)*/)
+			if (i <= n - 1 && argc != 2/*|| (n == 2) || (l == 0 && a == 0 && A == 0)*/)
 				printf("\n");
 		}
 	}
