@@ -9,13 +9,13 @@ int main(int argc, char *argv[])
 {
 	DIR *dir;
 	struct dirent *read;
-	int i, j, a = 0, A = 0, l = 0, n = argc, f = 0, total = 0, v = 0;
+	int i, j, a = 0, A = 0, l = 0, n = argc, f = 0, total = 0, v = 0, p;
 	/*int x = argc - 1;*/
 	struct stat buf;
 
 	if (argc < 2)
 		argv[0] = "./";
-	for (int p = 1; p < argc; p++)
+	for (p = 1; p < argc; p++)
 	{
 		if (!(opendir(argv[p])))
 		{
