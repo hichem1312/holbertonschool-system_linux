@@ -1,6 +1,6 @@
 #include "laps.h"
 /**
- * race_state - a function that keeps track of the number of laps made by several cars in a race
+ * race_state - a function that keeps track of the number of laps.
  * @id: an array of int representing the “identifier” of each car.
  * @size: the size of the array
  * Return: 0
