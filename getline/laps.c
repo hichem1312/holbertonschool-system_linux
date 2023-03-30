@@ -18,6 +18,7 @@ void race_state(int *id, size_t size)
     {
         for (j = 0; id[i] != car_nb[j] && car_nb[j] != 0; j++)
         {
+            
         }
             if (car_nb[j] != id[i])
             {
