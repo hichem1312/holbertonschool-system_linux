@@ -14,7 +14,17 @@ int main(int argc, char *argv[])
 	struct stat buf;
 
 	if (argc < 2)
-		argv[0] = "./";
+		{
+			argv[0] = "./";
+		 	dir = opendir(argv[0]);
+    		while ((read = readdir(dir)) != NULL)
+			{
+				if (read->d_name[0] != '.')
+        			printf("%s  ", read->d_name);
+			}
+			printf("\n");
+			closedir(dir);
+		}
 	for (j = 1; j < argc; j++)
 	{
 		if ((argv[j][0] == '-') && (argv[j][1] == '1'))
