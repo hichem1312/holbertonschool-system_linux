@@ -20,7 +20,10 @@ char *_getline(const int fd)
 		}
 		i++;
 	}
-
+	/*if (check <= 0)
+	{
+		return (NULL);
+	}*/
 	if (i >= 0)
 	{
 		new_line = malloc((i + 1) * sizeof(char));
@@ -31,7 +34,7 @@ char *_getline(const int fd)
 		strncpy(new_line, buff, i);
 		new_line[i] = '\0';
 	}
-	if (check == 0 && i <= 0)
+	if (check <= 0 && i <= 0)
 	{
 		return (NULL);
 	}
