@@ -36,5 +36,4 @@ char *_getline(const int fd)
 		return (NULL);
 	}
 	return (new_line);
-
 }
