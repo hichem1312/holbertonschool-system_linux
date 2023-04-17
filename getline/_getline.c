@@ -24,16 +24,17 @@ char *_getline(const int fd)
 	if (i >= 0)
 	{
 		new_line = malloc((i + 1) * sizeof(char));
-		if (!new_line) 
+		if (!new_line)
 		{
-			return(NULL);
+			return (NULL);
 		}
 		strncpy(new_line, buff, i);
 		new_line[i] = '\0';
 	}
 	if (check == 0 && i <= 0)
 	{
-		return(NULL);
+		return (NULL);
 	}
-	return(new_line);
+	return (new_line);
+
 }
