@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 /**
- * main - displays the information contained in the ELF file header of an ELF file.
+ * main - displays the information contained in the ELF file header.
  * @argc: number of argements
  * @argv: argument vector
  * @env:  environment
