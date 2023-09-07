@@ -4,6 +4,8 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <pthread.h>
 
 /**
@@ -68,4 +70,5 @@ typedef struct blur_portion_s
     kernel_t const *kernel;
 } blur_portion_t;
 void *thread_entry(void *arg);
+int tprintf(char const *format, ...);
 #endif
