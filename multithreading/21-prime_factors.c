@@ -1,7 +1,7 @@
 #include "multithreading.h"
 
 /**
- * prime_factors - a function that factorizes a number into a list of prime factors
+ * prime_factors - function that factorizes number into a list of prime factor
  * @s: a string representation of the number to factorize.
  * Return: list_t
  **/
