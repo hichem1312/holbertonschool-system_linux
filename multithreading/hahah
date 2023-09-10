@@ -1,0 +1,26 @@
+/**
+ * init_mutex - initialisation
+ * Return: EXIT_SUCCESS
+ */
+void init_mutex(void)
+{
+	if (pthread_mutex_init(&lock, NULL))
+	{
+		printf("init mutex failed\n");
+		exit(EXIT_FAILURE);
+	}
+}
+
+/**
+ * destroy_mutex - destroy
+ * Return: EXIT_SUCCESS
+ */
+void destroy_mutex(void)
+{
+
+	if (pthread_mutex_destroy(&lock))
+	{
+		printf("destroy mutex failed\n");
+		exit(EXIT_FAILURE);
+	}
+}

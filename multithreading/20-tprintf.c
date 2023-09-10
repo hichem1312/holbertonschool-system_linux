@@ -5,7 +5,7 @@ void init_mutex(void) __attribute__((constructor));
 void destroy_mutex(void) __attribute__((destructor));
 
 /**
- * tprintf - a function that uses the printf family to print out a given formatted string.
+ * tprintf - a function that uses the printf family to print out a given format
  *@format: the format
  * Return: EXIT_SUCCESS
  */
