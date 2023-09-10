@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <pthread.h>
 #include <stdarg.h>
+#include "list.h"
 
 /**
  * struct pixel_s - RGB pixel
@@ -72,4 +73,5 @@ typedef struct blur_portion_s
 } blur_portion_t;
 void *thread_entry(void *arg);
 int tprintf(char const *format, ...);
+list_t *prime_factors(char const *s);
 #endif
