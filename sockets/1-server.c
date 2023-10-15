@@ -15,7 +15,7 @@
 int main(void)
 {
 	int server_id = socket(PF_INET, SOCK_STREAM, 0);
-    struct sockaddr_in server, client;
+	struct sockaddr_in server, client;
 	socklen_t adr_size = sizeof(struct sockaddr);
 
 	if (server_id < 0)
