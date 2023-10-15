@@ -39,6 +39,6 @@ int main(void)
 	printf("LISTENING...\n");
 	while (1)
 		continue;
-    close(server_id);
+	close(server_id);
 	return (EXIT_SUCCESS);
 }
