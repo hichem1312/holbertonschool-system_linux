@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
 	struct sockaddr_in server;
 	struct hostent *host;
-    int server_id;
+	int server_id;
 
 	if (argc < 3)
 	{
@@ -32,7 +32,8 @@ int main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	server.sin_family = AF_INET;
-	inet_pton(AF_INET, inet_ntoa(*(struct in_addr *)host->h_addr), &server.sin_addr);
+	inet_pton(AF_INET,
+	 inet_ntoa(*(struct in_addr *)host->h_addr), &server.sin_addr);
 	server.sin_port = htons(atoi(argv[2]));
 	if (connect(server_id, (struct sockaddr *)&server, sizeof(server)) < 0)
 	{
