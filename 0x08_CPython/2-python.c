@@ -10,6 +10,12 @@ void print_python_bytes(PyObject *p)
 	Py_ssize_t size, byte;
 	char *s = NULL;
 
+	if (!PyBytes_Check(p))
+	{
+		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
+	}
+
 	printf("[.] bytes object info\n");
 	
 	size = ((PyVarObject *)(p))->ob_size;
@@ -33,9 +39,6 @@ void print_python_list(PyObject *p)
 	PyObject *item;
 	Py_ssize_t size = PyList_Size(p);
 	Py_ssize_t i;
-
-	if (!p)
-		return;
 
 	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %lu\n", size);
