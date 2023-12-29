@@ -10,6 +10,7 @@ void print_python_bytes(PyObject *p)
 	Py_ssize_t size, byte;
 	char *s = NULL;
 
+	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
 	{
 		printf("  [ERROR] Invalid Bytes Object\n");
